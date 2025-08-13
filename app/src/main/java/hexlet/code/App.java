@@ -8,14 +8,17 @@ public class App {
 
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
+        System.out.println("2 - Even");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         String userAnswer = scanner.next();
-//        scanner.close();
 
         switch (userAnswer) {
             case ("1"):
                 Cli.greeting();
+                break;
+            case ("2"):
+                Even.evenGame();
                 break;
             case ("0"):
                 break;
@@ -23,8 +26,5 @@ public class App {
                 System.out.println("Ой, кажется все сломалось!");
                 break;
         }
-
-//        Cli.greeting();
-
     }
 }
