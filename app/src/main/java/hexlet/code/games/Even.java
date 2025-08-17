@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
 import hexlet.code.Engine;
 import hexlet.code.GetRandom;
 
@@ -11,9 +10,9 @@ public class Even {
 
         int randomMax = 10;
 
-        String[][] questionsAndAnswers = new String[Engine.gameRounds][2];
+        String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
-        for (int i = 0; i < Engine.gameRounds; i++) {
+        for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
             int question = GetRandom.generateRandomNumber(randomMax);
             String correctAnswer = question % 2 == 0 ? "yes" : "no";
             questionsAndAnswers[i][0] = Integer.toString(question);

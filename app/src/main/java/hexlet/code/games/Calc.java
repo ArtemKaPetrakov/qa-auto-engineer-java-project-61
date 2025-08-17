@@ -1,13 +1,12 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
 import hexlet.code.Engine;
 import hexlet.code.GetRandom;
 
 public class Calc {
 
     public static String generateRandomArithmeticOperations() {
-        String[] arithmeticOperations = {"*", "-", "+"};// Рандомное число от 1 до 10
+        String[] arithmeticOperations = {"*", "-", "+"}; // Рандомное число от 1 до 10
         int randomIndex = GetRandom.generateRandomNumber(arithmeticOperations.length - 1);
         return arithmeticOperations[randomIndex];
     }
@@ -17,9 +16,9 @@ public class Calc {
         int randomMax = 10;
 
         String gameRules = "What is the result of the expression?";
-        String[][] questionsAndAnswers = new String[Engine.gameRounds][2];
+        String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
-        for (int i = 0; i < Engine.gameRounds; i++) {
+        for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
 
             int randomNumber1 = GetRandom.generateRandomNumber(randomMax);
             int randomNumber2 = GetRandom.generateRandomNumber(randomMax);
