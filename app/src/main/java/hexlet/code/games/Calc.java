@@ -5,6 +5,8 @@ import hexlet.code.GetRandom;
 
 public class Calc {
 
+    private static final int MAX_RANDOM_NUMBER = 10;
+
     public static String generateRandomArithmeticOperations() {
         String[] arithmeticOperations = {"*", "-", "+"}; // Рандомное число от 1 до 10
         int randomIndex = GetRandom.generateRandomNumber(arithmeticOperations.length - 1);
@@ -13,15 +15,13 @@ public class Calc {
 
     public static void calcGame() {
 
-        int randomMax = 10;
-
         String gameRules = "What is the result of the expression?";
         String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
         for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
 
-            int randomNumber1 = GetRandom.generateRandomNumber(randomMax);
-            int randomNumber2 = GetRandom.generateRandomNumber(randomMax);
+            int randomNumber1 = GetRandom.generateRandomNumber(MAX_RANDOM_NUMBER);
+            int randomNumber2 = GetRandom.generateRandomNumber(MAX_RANDOM_NUMBER);
             String randomArithmetic = generateRandomArithmeticOperations();
             String question = Integer.toString(randomNumber1)
                     + " " + randomArithmetic
