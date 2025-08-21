@@ -5,6 +5,9 @@ import hexlet.code.GetRandom;
 
 public class Prime {
 
+    private static final int MAX_RANDOM_NUMBER = 100;
+    private static final int START_INDEX = 3;
+
     public static boolean isPrime(int num) {
         if (num < 2) {
             return false;
@@ -15,7 +18,7 @@ public class Prime {
         if (num % 2 == 0) {
             return false;
         }
-        for (int i = 3; i <= Math.sqrt(num); i++) {
+        for (int i = START_INDEX; i <= Math.sqrt(num); i++) {
             if (num % i == 0) {
                 return false;
             }
@@ -27,12 +30,10 @@ public class Prime {
 
         String gameRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        int randomMax = 100;
-
         String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
         for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
-            int randomNum = GetRandom.generateRandomNumber(randomMax);
+            int randomNum = GetRandom.generateRandomNumber(MAX_RANDOM_NUMBER);
             String answer = isPrime(randomNum) ? "yes" : "no";
             questionsAndAnswers[i][0] = Integer.toString(randomNum);
             questionsAndAnswers[i][1] = answer;
