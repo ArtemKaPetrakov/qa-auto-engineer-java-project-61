@@ -5,10 +5,9 @@ import hexlet.code.GetRandom;
 
 public class Even {
 
+    private static final int MAX_RANDOM_NUMBER = 10;
 
     public static void evenGame() {
-
-        private static final int MAX_RANDOM_NUMBER = 10;
 
         String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
