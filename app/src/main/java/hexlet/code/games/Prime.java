@@ -27,12 +27,12 @@ public class Prime {
 
         String gameRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        int randomMax = 100;
+        private static final int MAX_RANDOM_NUMBER = 100;
 
         String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
         for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
-            int randomNum = GetRandom.generateRandomNumber(randomMax);
+            int randomNum = GetRandom.generateRandomNumber(MAX_RANDOM_NUMBER);
             String answer = isPrime(randomNum) ? "yes" : "no";
             questionsAndAnswers[i][0] = Integer.toString(randomNum);
             questionsAndAnswers[i][1] = answer;

@@ -13,15 +13,15 @@ public class Calc {
 
     public static void calcGame() {
 
-        int randomMax = 10;
+        private static final int MAX_RANDOM_NUMBER = 10;
 
         String gameRules = "What is the result of the expression?";
         String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
         for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
 
-            int randomNumber1 = GetRandom.generateRandomNumber(randomMax);
-            int randomNumber2 = GetRandom.generateRandomNumber(randomMax);
+            int randomNumber1 = GetRandom.generateRandomNumber(MAX_RANDOM_NUMBER);
+            int randomNumber2 = GetRandom.generateRandomNumber(MAX_RANDOM_NUMBER);
             String randomArithmetic = generateRandomArithmeticOperations();
             String question = Integer.toString(randomNumber1)
                     + " " + randomArithmetic

@@ -24,12 +24,12 @@ public class Gcd {
 
     public static void gcdGame() {
         String gameRules = "Find the greatest common divisor of given numbers.";
-        int randomMax = 100;
+        private static final int MAX_RANDOM_NUMBER = 100;
         String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
         for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
-            int randomNumber1 = GetRandom.generateRandomNumber(randomMax);
-            int randomNumber2 = GetRandom.generateRandomNumber(randomMax);
+            int randomNumber1 = GetRandom.generateRandomNumber(MAX_RANDOM_NUMBER);
+            int randomNumber2 = GetRandom.generateRandomNumber(MAX_RANDOM_NUMBER);
             String question = Integer.toString(randomNumber1) + " " + Integer.toString(randomNumber2);
 
             int correctAnswer = getDivider(randomNumber1, randomNumber2);
