@@ -40,7 +40,7 @@ public class Gcd {
             questionsAndAnswers[i][0] = question;
             questionsAndAnswers[i][1] = Integer.toString(correctAnswer);
 
-          }
-         Engine.runGame(gameRules, questionsAndAnswers);
         }
+        Engine.runGame(gameRules, questionsAndAnswers);
     }
+}
