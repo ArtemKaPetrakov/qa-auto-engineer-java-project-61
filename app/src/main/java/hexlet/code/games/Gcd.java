@@ -5,7 +5,7 @@ import hexlet.code.GetRandom;
 
 public class Gcd {
 
-    public static int getDivider(int num1, int num2) {
+    public static int getDivider (int num1, int num2) {
         int temp;
 
         if (num1 == 0) {
@@ -23,20 +23,24 @@ public class Gcd {
     }
 
     public static void gcdGame() {
+
         String gameRules = "Find the greatest common divisor of given numbers.";
-        private static final int MAX_RANDOM_NUMBER = 100;
+
+        int randomMax = 100;
+
         String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
         for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
-            int randomNumber1 = GetRandom.generateRandomNumber(MAX_RANDOM_NUMBER);
-            int randomNumber2 = GetRandom.generateRandomNumber(MAX_RANDOM_NUMBER);
+            int randomNumber1 = GetRandom.generateRandomNumber(randomMax);
+            int randomNumber2 = GetRandom.generateRandomNumber(randomMax);
             String question = Integer.toString(randomNumber1) + " " + Integer.toString(randomNumber2);
 
             int correctAnswer = getDivider(randomNumber1, randomNumber2);
 
             questionsAndAnswers[i][0] = question;
             questionsAndAnswers[i][1] = Integer.toString(correctAnswer);
+
+          }
+         Engine.runGame(gameRules, questionsAndAnswers);
         }
-        Engine.runGame(gameRules, questionsAndAnswers);
     }
-}

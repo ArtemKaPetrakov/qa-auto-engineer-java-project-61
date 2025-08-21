@@ -8,12 +8,12 @@ public class Even {
 
     public static void evenGame() {
 
-        private static final int MAX_RANDOM_NUMBER = 10;
+        int randomMax = 10;
 
         String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
         for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
-            int question = GetRandom.generateRandomNumber(MAX_RANDOM_NUMBER);
+            int question = GetRandom.generateRandomNumber(randomMax);
             String correctAnswer = question % 2 == 0 ? "yes" : "no";
             questionsAndAnswers[i][0] = Integer.toString(question);
             questionsAndAnswers[i][1] = correctAnswer;
