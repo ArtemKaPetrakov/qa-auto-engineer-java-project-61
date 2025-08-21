@@ -5,7 +5,10 @@ import hexlet.code.GetRandom;
 
 public class Progression {
 
-    // нужно сделать метод, который возвращает прогрессию ввиде строки и правильный ответ (пропущенное число)
+    private static final int RANDOM_FIRST_NUM = 100;
+    private static final int STEP = 10;
+    private static final int ELEMENT = 9;
+    private static final int PROGRESSION_SIZE = 10;
 
     public static String[] buildProgresion(int startNum, int step, int hiddenIndex, int size) {
 
@@ -38,20 +41,15 @@ public class Progression {
 
         String gameRules = "What number is missing in the progression?";
 
-        int randomFirstNum = 100;
-        int step = 10;
-        int element = 9;
-        int progressionSize = 10;
-
         String[][] questionsAndAnswers = new String[Engine.GAME_ROUNDS][2];
 
         for (int i = 0; i < Engine.GAME_ROUNDS; i++) {
 
-            int randomStartNum = GetRandom.generateRandomNumber(randomFirstNum);
-            int randomStep = GetRandom.generateRandomNumber(step) + 1; // не может быть 0
-            int randomHiddenIndex = GetRandom.generateRandomNumber(element) - 1; // индекс от 0 до 9
+            int randomStartNum = GetRandom.generateRandomNumber(RANDOM_FIRST_NUM);
+            int randomStep = GetRandom.generateRandomNumber(STEP) + 1; // не может быть 0
+            int randomHiddenIndex = GetRandom.generateRandomNumber(ELEMENT) - 1; // индекс от 0 до 9
 
-            String[] result = buildProgresion(randomStartNum, randomStep, randomHiddenIndex, progressionSize);
+            String[] result = buildProgresion(randomStartNum, randomStep, randomHiddenIndex, PROGRESSION_SIZE);
 
             questionsAndAnswers[i][0] = result[0];
             questionsAndAnswers[i][1] = result[1];
