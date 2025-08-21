@@ -7,7 +7,7 @@ public class Gcd {
 
     private static final int MAX_RANDOM_NUMBER = 100;
 
-    public static int getDivider (int num1, int num2) {
+    public static int getDivider(int num1, int num2) {
         int temp;
 
         if (num1 == 0) {
